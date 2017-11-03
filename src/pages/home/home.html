@@ -1,0 +1,27 @@
+<ion-header>  
+  <ion-navbar>
+    <ion-title>
+      GitHub
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>  
+    <ion-list inset>
+        <ion-item>
+            <ion-label>Username</ion-label>
+            <ion-input [(ngModel)]="username" type="text"></ion-input>
+        </ion-item>
+    </ion-list>
+    <div padding>
+        <button ion-button block (click)="search()">Search</button>
+    </div>
+    <ion-card *ngFor="let r of repository" > 
+        <ion-card-header>
+            {{ r.name }}
+        </ion-card-header>
+        <ion-card-content>
+            {{ r.description }}
+        </ion-card-content>
+    </ion-card>
+</ion-content> 
